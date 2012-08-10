@@ -16,6 +16,7 @@
 		1F75679815D4C32F004512BE /* JKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75679715D4C32F004512BE /* JKRootViewController.m */; };
 		1F75679E15D4C448004512BE /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 1F75679D15D4C448004512BE /* Nature */; };
 		1F7567A215D4C528004512BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7567A115D4C4D7004512BE /* AppDelegate.m */; };
+		1F7567A515D4C996004512BE /* JKImageLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7567A415D4C996004512BE /* JKImageLoadingOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		1F75679D15D4C448004512BE /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		1F7567A015D4C4D7004512BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F7567A115D4C4D7004512BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F7567A315D4C996004512BE /* JKImageLoadingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKImageLoadingOperation.h; sourceTree = "<group>"; };
+		1F7567A415D4C996004512BE /* JKImageLoadingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKImageLoadingOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +82,13 @@
 		1F75678315D4C2BE004512BE /* NSOperationQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				1F75679D15D4C448004512BE /* Nature */,
 				1F7567A015D4C4D7004512BE /* AppDelegate.h */,
 				1F7567A115D4C4D7004512BE /* AppDelegate.m */,
-				1F75679D15D4C448004512BE /* Nature */,
 				1F75679615D4C32F004512BE /* JKRootViewController.h */,
 				1F75679715D4C32F004512BE /* JKRootViewController.m */,
+				1F7567A315D4C996004512BE /* JKImageLoadingOperation.h */,
+				1F7567A415D4C996004512BE /* JKImageLoadingOperation.m */,
 				1F75678415D4C2BE004512BE /* Supporting Files */,
 			);
 			path = NSOperationQueueExample;
@@ -169,6 +174,7 @@
 				1F75678A15D4C2BE004512BE /* main.m in Sources */,
 				1F75679815D4C32F004512BE /* JKRootViewController.m in Sources */,
 				1F7567A215D4C528004512BE /* AppDelegate.m in Sources */,
+				1F7567A515D4C996004512BE /* JKImageLoadingOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

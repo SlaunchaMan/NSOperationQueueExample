@@ -9,10 +9,17 @@
 
 #import "JKRootViewController.h"
 
+#import "JKImageLoadingOperation.h"
+
+#import <objc/runtime.h>
+
+static const void *kImageLoadingOperationKey = &kImageLoadingOperationKey;
+
 
 @implementation JKRootViewController {
     NSString	*imageFolder;
     NSArray 	*imagePathArray;
+	NSOperationQueue *imageLoadingQueue;
 }
 
 #pragma mark - View Controller Lifecycle
@@ -61,7 +68,23 @@
     NSString *imagePath = [imageFolder stringByAppendingPathComponent:imageFilename];
     
     [[cell textLabel] setText:[imageFilename stringByDeletingPathExtension]];
-	[[cell imageView] setImage:[[UIImage alloc] initWithContentsOfFile:imagePath]];
+	
+	if (imageLoadingQueue == nil) {
+		imageLoadingQueue = [[NSOperationQueue alloc] init];
+		[imageLoadingQueue setName:@"Image Loading Queue"];
+	}
+	
+	NSOperation *currentOperation = objc_getAssociatedObject(cell, kImageLoadingOperationKey);
+	[currentOperation cancel];
+	[[cell imageView] setImage:nil];
+	
+	JKImageLoadingOperation *imageLoadingOperation = [[JKImageLoadingOperation alloc] init];
+	[imageLoadingOperation setImagePath:imagePath];
+	[imageLoadingOperation setCell:cell];
+	
+	objc_setAssociatedObject(cell, kImageLoadingOperationKey, imageLoadingOperation, OBJC_ASSOCIATION_RETAIN);
+	
+	[imageLoadingQueue addOperation:imageLoadingOperation];
 	
 	return cell;
 }
