@@ -1,5 +1,5 @@
 //
-//  JKAppDelegate.h
+//  RootViewController.h
 //  NSOperationQueueExample
 //
 //  Created by Jeff Kelley on 8/10/12.
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nullable, nonatomic, strong) UIWindow *window;
+@interface RootViewController : UITableViewController
 
 @end
 
